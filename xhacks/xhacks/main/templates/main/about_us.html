@@ -1,0 +1,42 @@
+{% extends "main/main_base.html" %}
+
+{% load static %}
+
+<!--Nav-->
+
+{% block nav %}
+<div class="navbar-nav">
+  {% if user.is_authenticated  %}
+  <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+  {% endif %}
+</div>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'main/main.css' %}">
+
+<div class="banner">
+    <h1>About us</h1>
+    <hr>
+</div>
+
+<div class="para" style="font-size: 20px; padding-top: 20px;">
+    <p>
+        Live Matter is a statewide suicide prevention social marketing campaign built on
+     three key messages: Know the signs. Find the words. Reach out. This campaign is intended 
+     to educate Indians how to recognize the warning signs of suicide, how to find the words
+      to have a direct conversation with someone in crisis and where to find professional help and resources.
+       Know the Signs is part of Each Mind Matters: California’s Mental Health Movement. To learn more,
+        including how you can get involved, visit
+    </p>
+</div>
+
+
+
+
+{% endblock content %}

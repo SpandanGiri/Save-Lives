@@ -1,0 +1,54 @@
+{% extends "main/main_base.html" %}
+
+{% load static %}
+
+<!--Nav-->
+
+{% block nav %}
+<div class="navbar-nav">
+  {% if user.is_authenticated  %}
+  <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+  {% endif %}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'main/main.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'main/suicide.css' %}">
+
+
+<div class="banner">
+    <h1>Help Me</h1>
+    <hr>
+    
+    <h6>Uses an ML model to predict suicide percentage according to the given inputs </h6>
+    <br>
+  <div class="form_container">
+    <form action="{% url 'result' %}" method="POST">
+        {% csrf_token %}
+        
+
+        <label for="">Region</label><br>
+        <input type="text" name="region"><br>
+
+        <label for="">Age</label><br>
+        <input type="text" name="age"><br>
+
+        <label for="">Gender</label><br>
+        <input type="text" name="gender"><br>
+
+        <label for="">Cause</label><br>
+        <input type="text" name="cause"><br>
+
+        <br>
+        <button type="submit" class="btn btn-outline-primary">Submit</button>
+        
+    </form>
+</div>
+</div>
+
+
+{% endblock content %}

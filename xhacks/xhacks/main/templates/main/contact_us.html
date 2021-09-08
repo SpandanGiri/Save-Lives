@@ -1,0 +1,50 @@
+{% extends "main/main_base.html" %}
+
+{% load static %}
+
+<!--Nav-->
+
+{% block nav %}
+<div class="navbar-nav">
+    {% if user.is_authenticated %}
+    <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+    <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+    {% endif %}
+</div>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'main/contact_us.css' %}">
+
+
+<div class="banner" style="height: 100%; width: 100%; ">
+    <h1>Contact us</h1>
+    <hr>
+    <div>
+        <p><b>National Institute of Medical Centre</b></p><br>
+        <p>Available in English </p><br>
+
+        <div class="con" style="background-color:transparent; display: flex; justify-content: space-between; align-items: center;">
+            <div class="con-box" style="height: 150px; width: 35%; background-color:transparent;">
+
+                <h6>Email: </h6><p>helpme@gmail.com</p>
+                <br>
+                <h6>Fax:</h6>1-123-443-543
+            </div>
+            <div class="con-box" style="height: 150px; width: 35%; background-color:transparent;margin-right: 100px;">
+                <h6>Email: </h6><p>helpme@gmail.com</p>
+                    <br>
+                <h6>Fax:</h6>1-123-443-543
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,19 @@
+# Suicide prediction
+
+# Main
+	user will login 
+
+	ML model with Django
+	Input -> parameters state , cause and age 
+
+	Output -> prediction plot.
+
+# Sponsor features
+	
+	Suicide prevention chatbot (Voiceflow)
+
+
+
+
+
+  

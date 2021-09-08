@@ -1,0 +1,71 @@
+{% extends "main/main_base.html" %}
+
+{% load static %}
+
+<!--Nav-->
+
+{% block nav %}
+<div class="navbar-nav">
+  {% if user.is_authenticated  %}
+  <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+  {% endif %}
+</div>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'main/NGO.css' %}">
+
+<div class="banner">
+    <h1>funding</h1>
+    <hr>
+</div>
+
+<div class="content">
+
+    
+    <div class="sub-content">
+        <div class="left">
+            <img src="{% static 'main/media/funding.jpg' %}" height="125px" width="150px" alt="">
+        </div>
+        <div class="right">
+            <h4><a href="https://www.brylin.com " style="color:  rgb(46, 174, 190);">Canadian Mental Health Services - BryLin Hospital</a></h4>
+            <div class="para">
+                <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HqM22rAuECzGq6" async> </script> </form>
+            </div>   
+        </div>
+    </div>
+
+    <div class="sub-content">
+        <div class="left">
+            <img src="{% static 'main/media/funding.jpg' %}" height="125px" width="150px" alt="">
+        </div>
+        <div class="right">
+            <h4><a href="https://www.camh.ca" style="color:  rgb(46, 174, 190);">CAMH: The Centre for Addiction and Mental Health</a></h4>
+            <div class="para">
+                <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HqM22rAuECzGq6" async> </script> </form>
+            </div>   
+        </div>
+    </div>
+
+    <div class="sub-content">
+        <div class="left">
+            <img src="{% static 'main/media/funding.jpg' %}" height="125px" width="150px" alt="">
+        </div>
+        <div class="right">
+            <h4><a href="https://www.swgeneral.com/" style="color:  rgb(46, 174, 190);">Behavioral Health - Center for Behavioral Health</a></h4>
+            <div class="para">
+                <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_HqM22rAuECzGq6" async> </script> </form>
+            </div>   
+        </div>
+    </div>
+</div>
+
+
+
+
+{% endblock content %}

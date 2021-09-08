@@ -1,0 +1,25 @@
+.banner{
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;color: honeydew;
+    background-color: black;
+    background-image: url('media/pain.jfif');
+    background-size: 1100px 450px;
+    
+}
+
+.graph{
+    padding-top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    padding-bottom: 30px;
+}
+.card{
+    width: 18rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}

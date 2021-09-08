@@ -1,0 +1,45 @@
+{% extends "main/main_base.html" %}
+
+{% load static %}
+
+<!--Nav-->
+
+{% block nav %}
+<div class="navbar-nav">
+  {% if user.is_authenticated  %}
+  <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+  {% endif %}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'main/main.css' %}">
+
+
+<!--chatbot-->
+<link rel="stylesheet" type="text/css" href="css/jquery.convform.css">
+<script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.convform.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+
+
+
+<div class="banner">
+    <h1>Result</h1>
+    <hr>
+    <br>
+    <h5>{{result}}% due to {{cause}} from age {{low}} to {{high}} in {{region}}  </h5>
+</div>
+
+
+    
+
+
+
+
+
+{% endblock content %}

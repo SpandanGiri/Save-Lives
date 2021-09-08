@@ -1,0 +1,42 @@
+{% extends "main/main_base.html" %}
+
+{% load static %}
+
+<!--Nav-->
+
+{% block nav %}
+<div class="navbar-nav">
+  {% if user.is_authenticated  %}
+  <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+  {% endif %}
+</div>
+
+{% endblock %}
+
+{% block content %}
+<style>
+  input{
+    width: 35%;
+  }
+  .contribute-form{
+    margin-top: 30px;
+    
+  }
+</style>
+
+
+<div class="content">
+  <h2>Contribute</h2>
+
+  <div class="contribute-form">
+    <p><h6>Name of Organisation :</h6></p>
+    <input type="text"><br><br>
+    <p><h6>Tell us how you want to contribute :</h6></p>
+    <textarea name="" id="" cols="50" rows="8"></textarea><br>
+    <button class="btn btn-outline-info">Submit</button>
+  </div>
+</div>
+
+
+{% endblock content %}

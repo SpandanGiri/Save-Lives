@@ -1,0 +1,155 @@
+{% extends "main/main_base.html" %}
+
+{% load static %}
+
+<!--Nav-->
+
+{% block nav %}
+<div class="navbar-nav">
+  {% if user.is_authenticated  %}
+  <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+  {% endif %}
+</div>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<style>
+    .survey_form{
+        margin-top: 40px;
+
+    }
+    input{
+        margin-top: 10px;
+    }
+</style>
+
+
+<h1>Survey form</h1>
+
+<div class="survey_form">
+
+    <form method="POST" action="/tracker">
+        {% csrf_token %}
+    
+        <ol>
+            <li>
+                <p><b>Where do you live ?</b></p>
+                <div class="obj">
+                    <input type="text" name='location' id="loc">
+                </div>               
+            </li>
+            <li>
+                <p><b>What is your age ?</b></p>
+                <div class="obj">
+                    <input type="text" id="age">
+                    
+                </div>               
+            </li>
+            <li>
+                <p><b>Your Gender ?</b></p>
+                <div class="obj">
+                    <input type="radio">
+                    <label >Male</label>
+                </div>
+                <div class="obj">
+                    <input type="radio">
+                    <label >Female</label>
+                </div>               
+            </li>
+
+            <li>
+                <p><b>Do you have difficulty in falling asleep in night ?</b></p>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Often</label>
+                </div>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Sometimes</label>
+                </div>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Not at all</label>
+                </div>
+            </li>
+
+            <li>
+                <p><b>Do you put a "happy face" to hide feelings of sadness ?</b></p>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Often</label>
+                </div>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Sometimes</label>
+                </div>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Not at all</label>
+                </div>
+        
+            </li>
+            <li>
+                <p><b>Have you lost intrest in things that you used to enjoy?</b></p>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Often</label>
+                </div>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Sometimes</label>
+                </div>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Not at all</label>
+                </div>
+            </li>
+            <li>
+                <p><b>Do you try to avoid dealing with other people ?</b></p>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Often</label>
+                </div>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Sometimes</label>
+                </div>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Not at all</label>
+                </div>
+            </li>
+            <li>
+                <p><b>Has your parent or sibling diagonised with depressive disorder ?</b></p>
+                <div class="obj">
+                    <input type="radio">
+                    <label>Yes</label>
+                </div>
+                <div class="obj">
+                    <input type="radio">
+                    <label>No</label>
+                </div>
+                
+            </li>
+        </ol>
+
+        <br>
+        <button type="submit" class="btn btn-outline-info" id="submit" onclick="recorded()" >Submit</button>
+    
+    </form>
+
+
+</div>
+
+<script>
+    function recorded(){
+        alert('response recorded');
+    }
+</script>
+{% endblock content %}
+

@@ -1,0 +1,73 @@
+{% extends "main/main_base.html" %}
+
+{% load static %}
+
+<!--Nav-->
+
+{% block nav %}
+<div class="navbar-nav">
+  {% if user.is_authenticated  %}
+  <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+  <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+  {% endif %}
+</div>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'main/NGO.css' %}">
+
+<div class="banner" style="background-color: bisque;">
+    <h1>NGO</h1>
+</div>
+
+<div class="content" > 
+
+    <div class="sub-content">
+        <div class="left">
+            <img src="{% static 'main/media/funding.jpg' %}" height="125px" width="150px" alt="">
+        </div>
+        <div class="right">
+            <h4><a href="{% url 'funding' %}" style="color:  rgb(46, 174, 190);">Funding</a></h4>
+            <div class="para">
+                Lend some cash dude
+            </div>
+        </div>
+    </div>
+    <div class="sub-content">
+        <div class="left">
+            <img src="{% static 'main/media/model.jpg' %}" height="125px" width="150px" alt="">
+        </div>
+        <div class="right">
+            <h4><a href="{% url 'suicide' %}" style="color:  rgb(46, 174, 190);">Model</a></h4>
+            <div>
+                <div class="para">
+                    Check models
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sub-content">
+        <div class="left">
+            <img src="{% static 'main/media/contribute.png' %}" height="125px" width="150px" alt="">
+        </div>
+        <div class="right">
+            <h4><a href="{% url 'contribute' %}" style="color:  rgb(46, 174, 190);">Contribute</a></h4>
+            <div>
+                <div class="para">
+                    Join our hands
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+{% endblock content %}

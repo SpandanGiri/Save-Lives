@@ -1,0 +1,27 @@
+.content{
+    height: 600px;
+    width: 100%;
+    
+}
+.sub-content{
+    margin-top: 20px;
+    height: 150px;
+    width: 100%;
+    background-color:white;
+    display: flex;
+}
+.left{
+    width: 190px;
+    height: 130px;
+    margin: 10px 30px 10px 30px;
+    
+}
+.right{
+    margin-top: 10px;
+}
+.para{
+    margin-top: 20px;
+}
+a{
+    color: rgb(97, 220, 236);
+}
